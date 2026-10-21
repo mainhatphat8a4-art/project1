@@ -1,12 +1,12 @@
 #include <stdio.h>
 typedef struct loaiXe{
-	 XS50CC[10];
-	 XS100CC[10];
-	 XG50CC[10];
-	 XG100CC[10];
+	 int XS50CC[10];
+	 int XS100CC[10];
+	 int XG50CC[10];
+	 int XG100CC[10];
 }loaiXe;
-void chon(int chon){
-	switch (chon){
+void quanLy(int chon){
+		switch (chon){
 		case 1 : ;
 			break;
 		case 2 : ;
@@ -19,7 +19,7 @@ void chon(int chon){
 			printf("Lua chon khong hop le ");
 	}
 }
-void quanLy(){
+int main (){
 	int chon=0;
 	printf("1.Kiem tra tinh trang loai xe ");
 	printf("\n2.Nhap them xe ");
@@ -27,7 +27,6 @@ void quanLy(){
 	printf("\n4.Thoat");
 	printf("\nChon ");
 	scanf("%d",&chon);
-}
-int main (){
+	quanLy(chon);
 return 0; 
 } 
