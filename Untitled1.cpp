@@ -293,6 +293,7 @@ void themDon(){
 	
 }
 
+<<<<<<< HEAD
 void timKhach(){
 	int ma ;
 	printf("Nhap ma khach hang can tim : ");
@@ -371,6 +372,8 @@ void xoaDon(){
 	printf("\nDa xoa");
 }
 
+=======
+>>>>>>> c586ccebcaadd57cd53a03f226679752d9212ee0
 int main () {
     printf("=========================================");
     printf("\n\t DICH VU CHO THUE XE MAY");
