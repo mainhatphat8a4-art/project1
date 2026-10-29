@@ -57,6 +57,7 @@ void timDon();
 void xoaKhach();
 void xoaDon();
 void themXe();
+void thongKe();
 
 void bangXe() {
     printf("\n\n============== TINH TRANG XE ==============");
@@ -189,6 +190,9 @@ void quanLy(int chon) {
     	break;
     case 8:
     	themXe();
+    	break;
+    case 9:
+    	thongKe();
     	break;
     default :
         printf("Lua chon khong hop le!");
@@ -410,6 +414,18 @@ void themXe(){
 	danhSachXe[viTri].tongXe+=soLuongThem;
 	danhSachXe[viTri].conLai+=soLuongThem;
 }
+void thongKe(){
+	printf("=========================================");
+    printf("\n\t\tTHONG KE");
+    printf("\n=========================================");
+    int tongSoLuongXe=0;
+    for (int i=0;i<soXe;i++){
+    	tongSoLuongXe+=danhSachXe[i].tongXe;
+	}
+    printf("\nTong so luong xe dang co : %d ",tongSoLuongXe);
+    printf("\nTong so khach hang hien co : %d ",soKhach);
+    printf("\nTong so don dang co : %d ",soDon);
+}
 int main () {
     printf("=========================================");
     printf("\n\t DICH VU CHO THUE XE MAY");
@@ -433,7 +449,8 @@ int main () {
 	    printf("\n5. Tim don thue");
 	    printf("\n6. Xoa khach");
 	    printf("\n7. Xoa don");
-	    printf("\n8.Them so luong xe");
+	    printf("\n8. Them so luong xe");
+	    printf("\n9. Thong ke");
 		printf("\n0. Thoat");
 	    printf("\nChon: ");
  	   scanf("%d",&chon);
