@@ -43,8 +43,6 @@ int soKhach = 0;
 donThue danhSachDon[50];
 int soDon = 0;
 
-char HinhThuc[3][10] = {"", "Ngay", "Thang"};  
-char TrangThai[2][15] = {"Dang thue", "Da hoan"};
 
 void bangXe();
 void menuKhach();
@@ -58,6 +56,7 @@ void timKhach();
 void timDon();
 void xoaKhach();
 void xoaDon();
+void themXe();
 
 void bangXe() {
     printf("\n\n============== TINH TRANG XE ==============");
@@ -188,6 +187,9 @@ void quanLy(int chon) {
     case 7 : 
     	xoaDon();
     	break;
+    case 8:
+    	themXe();
+    	break;
     default :
         printf("Lua chon khong hop le!");
     }
@@ -243,6 +245,7 @@ void themDon(){
 	printf("Nhap ma khach: ");
 	scanf(" %d", &danhSachDon[soDon].maKhach);
 
+	nhaplai:
 	printf("Nhap ma xe: ");
 	scanf(" %d", &danhSachDon[soDon].maXe);
 	
@@ -271,11 +274,25 @@ void themDon(){
  	    case 'D':
     	    tien = danhSachXe[viTri].giaNgay
     	         * danhSachDon[soDon].thoiHan;
+    	    if (danhSachXe[viTri].conLai>0){
+    	  	 	danhSachXe[viTri].thueNgay+=1;
+    	   		danhSachXe[viTri].conLai-=1;
+    	    }else{
+    	    	printf("Ma xe qui khach chon da het vui long chon loai khac\n");
+    	    	goto nhaplai;
+			}
    	 	    break;
 
    		case 'M':
     	    tien = danhSachXe[viTri].giaThang
      	        * danhSachDon[soDon].thoiHan;
+     	    if (danhSachXe[viTri].conLai>0){
+     	  		danhSachXe[viTri].thueThang+=1;
+     	   		danhSachXe[viTri].conLai-=1;
+ 	    	}else{
+    	    	printf("Ma xe qui khach chon da het vui long chon loai khac\n");
+    	    	goto nhaplai;
+			}
        		 break;
 	
     	default:
@@ -369,7 +386,30 @@ void xoaDon(){
 	soDon--;
 	printf("\nDa xoa!");
 }
-
+void themXe(){
+	int ma;
+	int soLuongThem;
+	bangXe();
+	printf("\nNhap ma loai xe can them : ");
+	scanf("%d",&ma);
+	int viTri=-1;
+	for (int i=0;i<soXe;i++){
+		if (danhSachXe[i].ma==ma){
+			printf("Da tim thay xe can nhap\n");
+			viTri=i;
+		}
+	}
+	if(viTri==-1){
+		printf("Khong tim thay loai xe can nhap\n");
+	}
+	printf("Nhap so luong xe nhap them : ");
+	scanf("%d",&soLuongThem);
+	if (soLuongThem<=0){
+		printf("Khong duoc so luong xe them phai > 0\n");
+	}
+	danhSachXe[viTri].tongXe+=soLuongThem;
+	danhSachXe[viTri].conLai+=soLuongThem;
+}
 int main () {
     printf("=========================================");
     printf("\n\t DICH VU CHO THUE XE MAY");
@@ -386,7 +426,6 @@ int main () {
     int chon=0;
     do {
     	printf("\n\n\n============= QUAN LY XE MAY ============");
-    	printf("\n0. Thoat");
 		printf("\n1. Xem tinh trang xe");
 		printf("\n2. Xem danh sach khach hang");
 	    printf("\n3. Xem danh sach don thue");
@@ -394,6 +433,8 @@ int main () {
 	    printf("\n5. Tim don thue");
 	    printf("\n6. Xoa khach");
 	    printf("\n7. Xoa don");
+	    printf("\n8.Them so luong xe");
+		printf("\n0. Thoat");
 	    printf("\nChon: ");
  	   scanf("%d",&chon);
  	   quanLy(chon);
