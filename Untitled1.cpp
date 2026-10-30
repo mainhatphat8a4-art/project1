@@ -79,9 +79,9 @@ void menuKhach(){
 	int chon;
 	do{
 		printf("\n\n========== QUAN LY KHACH HANG =========");
-		printf("\n0.Quay lai");
 		printf("\n1.Xem danh sach khach hang");
 		printf("\n2.Them khach");
+		printf("\n0.Quay lai");
 		printf("\n------------------------------------------");
 		printf("\nNhap lua chon: ");
 		scanf("%d",&chon);
@@ -120,9 +120,9 @@ void menuDon(){
 	int chon;
 	do{
 		printf("\n\n============== QUAN LY DON THUE ===========");
-		printf("\n0.Quay lai");
 		printf("\n1.Xem danh sach don thue");
 		printf("\n2.Them don");
+		printf("\n0.Quay lai");
 		printf("\n----------------------------------------------");
 		printf("\nNhap lua chon: ");
 		scanf("%d",&chon);
@@ -221,8 +221,13 @@ void themKhach(){
 	printf("Nhap ho ten: ");
 	scanf(" %29[^\n]", &danhSachKhach[soKhach].hoTen);
 
+	nhaplaisdt:
 	printf("Nhap so dien thoai: ");
 	scanf(" %d", &danhSachKhach[soKhach].soDienthoai);
+	if(danhSachKhach[soKhach].soDienthoai>999999999||danhSachKhach[soKhach].soDienthoai<100000000){
+		printf("Sdt sai roi ni nhap lai ik\n");
+		goto nhaplaisdt;
+	}
 	soKhach++;
 	printf("Them thanh cong!\n");
 }
