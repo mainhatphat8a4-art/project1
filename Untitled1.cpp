@@ -204,11 +204,7 @@ void quanLy(int chon) {
     case 11:
     	chinhSua();
     	break;
-<<<<<<< HEAD
     default:
-=======
-    default :
->>>>>>> 4d8a0afa7ef3c5466d6bd9fa940ae107623e117f
         printf("Lua chon khong hop le!");
     }
 }
@@ -219,11 +215,7 @@ void themKhach(){
 		return;
 	}
 	int ma;
-<<<<<<< HEAD
 	printf("Nhap ma khach hang (so nguyen): ");
-=======
-	printf("Nhap ma khach hang ( so nguyen ): ");
->>>>>>> 4d8a0afa7ef3c5466d6bd9fa940ae107623e117f
 	scanf("%d",&ma);
 	if(ma<=0){
 		printf("Ma phai lon hon 0!\nVa ma phai la so khac ki tu dac biet\n ");
@@ -468,17 +460,6 @@ void xoaDon(){
 		return;
 	}
 	if (danhSachDon[vitri].trangThai==0){
-		for (int i=0;i<soXe;i++){
-			if (danhSachXe[i].ma==danhSachDon[vitri].maXe){
-				danhSachXe[i].conLai+=1;
-				if (danhSachDon[vitri].hinhThuc=='D'){
-					danhSachXe[i].thueNgay-=1;
-				}else{
-					danhSachXe[i].thueThang-=1;
-				}
-				break;
-			}
-		}
 		printf("\nDa xoa!");
 		for (int i=vitri;i<soDon-1;i++){
 		danhSachDon[i]=danhSachDon[i+1];
@@ -577,7 +558,6 @@ void thongKe(){
 }
 void chinhSua(){
 	int chon=0;
-<<<<<<< HEAD
 	printf("\n1. Khach\n");
 	printf("2. Don\n");
 	printf("0. Quay lai\n");
@@ -588,25 +568,14 @@ void chinhSua(){
 		case 0:
 		    return;
 			break;
-=======
-	printf("1. Khach\n");
-	printf("2. Don\n");
-	printf("Chon : ");
-	scanf("%d",&chon);
-	switch (chon){
->>>>>>> 4d8a0afa7ef3c5466d6bd9fa940ae107623e117f
 		case 1:
 			chinhSuaKhach();
 			break;
 		case 2:
 			chinhSuaDon();
 			break;
-<<<<<<< HEAD
 		default: 
 			printf("Lua chon khong hop le!");
-=======
-		default : 0;
->>>>>>> 4d8a0afa7ef3c5466d6bd9fa940ae107623e117f
 	}
 }
 void chinhSuaKhach(){
@@ -614,17 +583,12 @@ void chinhSuaKhach(){
 	int chon=0;
 	int sdt=0;
 	int soTu=0;
-<<<<<<< HEAD
     printf("Nhap ma khach hang can tim: ");
-=======
-    printf("Nhap ma khach hang can tim : ");
->>>>>>> 4d8a0afa7ef3c5466d6bd9fa940ae107623e117f
     scanf("%d",&ma);
     for (int i=0;i<soKhach;i++){
         if (danhSachKhach[i].ma==ma){
             printf("Da tim thay khach can sua thong tin\n");
             printf("1. Chinh ten\n");
-<<<<<<< HEAD
 			printf("2. Chinh so dien thoai\n");
 			printf("0. Quay lai\n");
 			printf("------------------------------------\n");
@@ -639,16 +603,6 @@ void chinhSuaKhach(){
 					nhaplaiten:
 					soTu=0;
 					printf("Nhap ten thay the: ");
-=======
-			printf("2. Chinh sdt\n");
-			printf("Chon : ");
-			scanf("%d",&chon);
-			switch (chon){
-				case 1:
-					do{
-					nhaplaiten:
-					printf("Nhap ten thay the : ");
->>>>>>> 4d8a0afa7ef3c5466d6bd9fa940ae107623e117f
 					scanf(" %29[^\n]", danhSachKhach[i].hoTen);
 					for (int j=0;danhSachKhach[i].hoTen[j]!='\0';j++){
 						if(danhSachKhach[i].hoTen[j]=='!'
@@ -660,10 +614,6 @@ void chinhSuaKhach(){
 						printf("Ten gi la the\n");
 						printf("Nhap lai di\n");
 						goto nhaplaiten;
-<<<<<<< HEAD
-=======
-						return ;
->>>>>>> 4d8a0afa7ef3c5466d6bd9fa940ae107623e117f
 						}else{
 							if (danhSachKhach[i].hoTen[j]!=' ' && (j==0 || danhSachKhach[i].hoTen[j-1]==' ')){
 							soTu++;
@@ -674,25 +624,17 @@ void chinhSuaKhach(){
 					printf("Ho ten phai co it nhat 2 tu!\n\n");
 					}
 					} while(soTu<2);
-<<<<<<< HEAD
 					printf("Da cap nhat ten moi!\n\n");
 					break;
 				case 2:
 					nhaplaisdt:
 					printf("Nhap sdt thay the: ");
-=======
-					break;
-				case 2:
-					nhaplaisdt:
-					printf("Nhap sdt thay the : ");
->>>>>>> 4d8a0afa7ef3c5466d6bd9fa940ae107623e117f
 					scanf("%d",&sdt);
 					if(sdt>999999999||sdt<100000000){
 						printf("So dien thoai khong hop le!\n\n");
 						goto nhaplaisdt;
 					}
 					danhSachKhach[i].soDienthoai=sdt;
-<<<<<<< HEAD
 					printf("Da cap nhat so dien thoai moi!\n\n");
 					break;
 				default: 
@@ -705,13 +647,6 @@ void chinhSuaKhach(){
     printf("Khach hang khong ton tai!\n\n");  
 }
 
-=======
-					break;
-			}
-        }
-    }
-}
->>>>>>> 4d8a0afa7ef3c5466d6bd9fa940ae107623e117f
 void chinhSuaDon(){
 	int ma=0;
 	int chon=0;
@@ -719,10 +654,7 @@ void chinhSuaDon(){
 	int maXe=0;
 	char hinhThuc='o';
 	int thoiHan=0;
-<<<<<<< HEAD
 	int tien=0;
-=======
->>>>>>> 4d8a0afa7ef3c5466d6bd9fa940ae107623e117f
 	printf("Nhap ma don can sua: ");
 	scanf("%d",&ma);
 	for (int i=0;i<soDon;i++){
@@ -732,7 +664,6 @@ void chinhSuaDon(){
 			printf("2. Ma xe\n");
 			printf("3. Hinh thuc\n");
 			printf("4. Thoi han\n");
-<<<<<<< HEAD
 			printf("0. Quay lai\n");
 			printf("------------------------------------\n");
 			suadon:
@@ -744,118 +675,80 @@ void chinhSuaDon(){
 				case 1:
 					nhapLaiMaKhach:
 					printf("Nhap ma khach thay the: ");
-=======
-			printf("Chon: ");
-			scanf("%d",&chon);
-			switch (chon){
-				case 1:
-					nhapLaiMaKhach:
-					printf("Nhap ma khach thay the : ");
->>>>>>> 4d8a0afa7ef3c5466d6bd9fa940ae107623e117f
 					scanf("%d",&maKhach);
 					if (maKhach<0){
 						printf("Ma khach la so nguyen\nNhap lai ik\n");
 						goto nhapLaiMaKhach;
 					}
 					danhSachDon[i].maKhach=maKhach;
-<<<<<<< HEAD
 					printf("Da cap nhat ma khach moi!\n\n");
 					break;
 				case 2:
 					nhapLaiMaXe:
 					printf("Nhap ma xe thay the: ");
-=======
-					break;
-				case 2:
-					nhapLaiMaXe:
-					printf("Nhap ma xe thay the : ");
->>>>>>> 4d8a0afa7ef3c5466d6bd9fa940ae107623e117f
 					scanf("%d",&maXe);
 					if(maXe<=0||maXe>5){
 						printf("Ben dich vu moi co nhieu do xe a\nNhap lai ik\n");
 						goto nhapLaiMaXe;
 					}
+					if (danhSachDon[i].trangThai==1){
+						if (danhSachXe[maXe-1].conLai<=0){
+							printf("Ma xe quy khach chon da het vui long chon loai khac.\n");
+							goto nhapLaiMaXe;
+						}
+						danhSachXe[danhSachDon[i].maXe-1].conLai+=1;
+						danhSachXe[maXe-1].conLai-=1;
+						if (danhSachDon[i].hinhThuc=='D'){
+							danhSachXe[danhSachDon[i].maXe-1].thueNgay-=1;
+							danhSachXe[maXe-1].thueNgay+=1;
+						}else{
+							danhSachXe[danhSachDon[i].maXe-1].thueThang-=1;
+							danhSachXe[maXe-1].thueThang+=1;
+						}
+					}
 					danhSachDon[i].maXe=maXe;
-<<<<<<< HEAD
+					danhSachDon[i].tienThue=(danhSachDon[i].hinhThuc=='D' ? danhSachXe[maXe-1].giaNgay : danhSachXe[maXe-1].giaThang) * danhSachDon[i].thoiHan;
 					printf("Da cap nhat ma xe moi!\n\n");
 					break;
 				case 3:
 					nhapLaiHT:
 					printf("Nhap hinh thuc thay the (D or M): ");
 					scanf(" %c",&hinhThuc);
-					maXe=danhSachDon[i].maXe;
+					maXe=danhSachDon[i].maXe-1;
 					switch (hinhThuc) {
 						case 'D':
-							if (danhSachXe[maXe].conLai>0){
+							if (danhSachDon[i].trangThai==1 && danhSachDon[i].hinhThuc!='D'){
 								danhSachXe[maXe].thueNgay+=1;
-								if(danhSachXe[maXe].thueThang>=1){
-									danhSachXe[maXe].thueThang-=1;
-								}
+								danhSachXe[maXe].thueThang-=1;
 							}
+							tien = danhSachXe[maXe].giaNgay * danhSachDon[i].thoiHan;
 							break;
 						case 'M':
-							if (danhSachXe[maXe].conLai>0){
+							if (danhSachDon[i].trangThai==1 && danhSachDon[i].hinhThuc!='M'){
 								danhSachXe[maXe].thueThang+=1;
-								if(danhSachXe[maXe].thueNgay>=1){
-									danhSachXe[maXe].thueNgay-=1;
-								}
+								danhSachXe[maXe].thueNgay-=1;
 							}
+							tien = danhSachXe[maXe].giaThang * danhSachDon[i].thoiHan;
 							break;
 						default:
 							printf("Hinh thuc thue khong hop le!\n");
 							goto nhapLaiHT;
 					}
 					danhSachDon[i].hinhThuc=hinhThuc;
+					danhSachDon[i].tienThue=tien;
 					printf("Da cap nhat hinh thuc moi!\n\n");
 					break;
 				case 4:
 					nhapLaiTH:
 					printf("Nhap thoi han thay the: ");
-=======
-					break;
-				case 3:
-					nhapLaiHT:
-					printf("Nhap hinh thuc thay the : ");
-					scanf(" %c",&hinhThuc);
-					danhSachDon[i].hinhThuc=hinhThuc;
-					maXe=danhSachDon[i].maXe;
-					switch (danhSachDon[i].hinhThuc) {
- 					    case 'D':
-    	 				   if (danhSachXe[maXe].conLai>0){
-    	 			 	 	danhSachXe[maXe].thueNgay+=1;
-    	 			 	 	if(danhSachXe[maXe].thueThang>=1){
-   		 	 			 	 	danhSachXe[maXe].thueThang-=1;
-							}
-    	 				   }
-   	 	 			 		break;
-
-				   		case 'M':
- 				    	    if (danhSachXe[maXe].conLai>0){
- 				    	  		danhSachXe[maXe].thueThang+=1;
- 				    	  		if(danhSachXe[maXe].thueNgay>=1){
- 				    	  			danhSachXe[maXe].thueNgay-=1;
-								}
- 					    	}
- 				      		 break;	
-  					  	default:
- 				    	   printf("Hinh thuc thue khong hop le!\n");
-  					      return;
-						}
-					break;
-				case 4:
-					int tien=0;
-					nhapLaiTH:
-					printf("Nhap thoi han thay the : ");
->>>>>>> 4d8a0afa7ef3c5466d6bd9fa940ae107623e117f
 					scanf("%d",&thoiHan);
 					if(thoiHan<=0){
 						printf("Ben dich vu khong cho thue nhieu do thoi han dau nhe\nNhap lai ik\n");
 						goto nhapLaiTH;
 					}
 					danhSachDon[i].thoiHan=thoiHan;
-					maXe=danhSachDon[i].maXe;
+					maXe=danhSachDon[i].maXe-1;
 					switch (danhSachDon[i].hinhThuc) {
-<<<<<<< HEAD
 						case 'D':
 							tien = danhSachXe[maXe].giaNgay * danhSachDon[i].thoiHan;
 							break;
@@ -879,39 +772,6 @@ void chinhSuaDon(){
 	printf("Ma don khong ton tai!\n\n");
 }
 
-=======
- 					    case 'D':
-    	 				   tien = danhSachXe[maXe].giaNgay
-    	 			        * danhSachDon[i].thoiHan;
-    	 				   if (danhSachXe[maXe].conLai>0){
-    	 			 	 	danhSachXe[maXe].thueNgay+=1;
-    	 			 	 	if(danhSachXe[maXe].thueThang>=1){
-   		 	 			 	 	danhSachXe[maXe].thueThang-=1;
-							}
-    	 				   }
-   	 	 			 		break;
-
-				   		case 'M':
-  					  	    tien = danhSachXe[maXe].giaThang
-   				  	        * danhSachDon[i].thoiHan;
- 				    	    if (danhSachXe[maXe].conLai>0){
- 				    	  		danhSachXe[maXe].thueThang+=1;
- 				    	  		if(danhSachXe[maXe].thueNgay>=1){
- 				    	  			danhSachXe[maXe].thueNgay-=1;
-								}
- 					    	}
- 				      		 break;	
-  					  	default:
- 				    	   printf("Hinh thuc thue khong hop le!\n");
-  					      return;
-						}
-					danhSachDon[i].tienThue=tien;
-					break;
-			}
-		}
-	}
-}
->>>>>>> 4d8a0afa7ef3c5466d6bd9fa940ae107623e117f
 int main () {
     printf("=========================================");
     printf("\n\t DICH VU CHO THUE XE MAY");
